@@ -208,20 +208,9 @@ article.article.page {
     }
 }
 
-article.index.page {
+header.main {
 
-    article.post {
-
-        header.post {
-
-            //
-        }
-    }
-}
-
-header.frontpage.main {
-
-    font-size: 3.4em;
+    font-size: 3rem;
 
     h1 {
 
@@ -231,6 +220,20 @@ header.frontpage.main {
     h2 {
 
         font-size: .6em;
+    }
+
+    nav {
+
+        li {
+
+            list-style: none;
+            font-size: .6em;
+        }
+
+        :link {
+
+            font-family: $font-secondary;
+        }
     }
 }
 

@@ -164,7 +164,7 @@ article.index.page {
     }
 }
 
-header.frontpage.main {
+header.main {
 
     padding: 8rem 0 6rem;
     text-align: center;
@@ -179,6 +179,19 @@ header.frontpage.main {
 
         margin-top: .5em;
         margin-bottom: 0;
+    }
+
+    nav {
+
+        ul {
+
+            padding: 0;
+        }
+
+        li {
+
+            margin: 0;
+        }
     }
 }
 

@@ -45,28 +45,6 @@ a.action {
     }
 }
 
-
-header.main {
-
-    background-color: $color-primary-white;
-
-    &.main {
-
-        color: $color-primary;
-
-        a:link,
-        a:visited {
-
-            color: $color-primary;
-        }
-
-        .title {
-
-            color: $color-primary;
-        }
-    }
-}
-
 footer.main {
 
     color: $color-primary-white;
@@ -176,11 +154,17 @@ article.index.page {
 	}
 }
 
-header.frontpage.main {
+header.main {
 
     color: $color-primary-white;
     text-shadow: 0 .1rem .3rem fade-out($color-primary-black, .2);
     background-color: $color-primary-dark;
+
+    :link,
+    :visited {
+
+        color: $color-primary-white;
+    }
 }
 
 aside.frontpage.main {
