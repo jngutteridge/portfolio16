@@ -18,31 +18,37 @@
 
 			switch ($request) {
 
-				case '/':
-					$controller = new HomepageController();
-					$controller->init($request);
-					break;
+                case '/':
+                    $controller = new HomepageController();
+                    $controller->init($request);
+                    break;
+
+                case '/work/':
+                    $controller = new WorkController();
+                    $controller->init($request);
+                    break;
+
+                case '/skills/':
+                    $controller = new SkillsController();
+                    $controller->init($request);
+                    break;
+
+                case '/contact/':
+                    $controller = new ContactController();
+                    $controller->init($request);
+                    break;
 
  				default:
 
- 					/*if (substr($request, 0, 13)=='/destination/') {
+ 					if (substr($request, 0, 6)=='/work/') {
 
- 						$controller = new DestinationController();
+ 						$controller = new WorkController();
  						$controller->init($request);
  					}
- 					elseif (substr($request, 0, 15)=='/holiday-types/') {
+ 					else {
 
- 						$controller = new TypesController();
- 						$controller->init($request);
- 					}
- 					elseif (substr($request, 0, 8)=='/hotels/') {
-
- 						$controller = new HotelsController();
- 						$controller->init($request);
- 					}
- 					else { */
-
- 					Error::pageNotFound();
+ 					    Error::pageNotFound();
+                    }
 			}
 		}
 	}

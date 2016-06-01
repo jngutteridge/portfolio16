@@ -3,6 +3,8 @@
 
 	class TemplateData {
 
+        static protected $title;
+
 		public static function echoHeader() {
 
 			echo '<!DOCTYPE html>';
@@ -25,6 +27,17 @@
 
 		public static function getTitle() {
 
-			return 'Title';
+			if (self::$title) return self::$title;
+            else return 'Jack Gutteridge, Web Developer / Portfolio';
 		}
+
+        public static function setTitle($title) {
+
+            self::$title = $title;
+        }
+
+        public static function addTitle($title) {
+
+            self::$title = $title . ' / Jack Gutteridge, Web Developer / Portfolio';
+        }
 	}

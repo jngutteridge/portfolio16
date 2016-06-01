@@ -47,6 +47,13 @@
     padding: 0 2rem;
 }
 
+@mixin width-container-xwide {
+
+    max-width: 128rem;
+
+    @include width-container;
+}
+
 @mixin width-container-wide {
 
     max-width: 80rem;

@@ -2,210 +2,181 @@
 $time-transition-brisk: 60ms;
 $time-transition-lasting: 600ms;
 
-header.main.frontpage {
+header.main section.title {
 
-    // background: url('/wp-content/themes/jng16/img/cover-2014-winter.jpg') center / cover;
+    position: relative;
+
+    a {
+
+        @include hide-text;
+        @include position-absolute-fill;
+    }
 }
 
-section.frontpage.links {
+article.main.frontpage {
 
-    nav.section {
+    .container {
 
-        ul {
+        @include width-container-xwide;
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-            list-style: none;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            height: 0; // because fuck css
-            padding: 0 0 20%;
-        }
+    article.thumb {
 
-        li {
+        position: relative;
+        display: block;
 
-            margin: 0;
-            padding: 0;
-            width: 20%;
-            display: flex;
-            justify-content: center;
-            height: 0; // seriously? in 2015?
-            padding: 1% 0 19%;
-        }
+        transition: all $time-transition-lasting;
+        height: 25rem;
+        z-index: 2;
+        flex: 1 33.333%;
+        min-width: 24rem;
 
-        a.link {
+        &:hover {
 
-            @include hide-text;
-            height: 0; // becuse we still can't aspect ratio
-            z-index: 2;
-            position: relative;
-            transition: $time-transition-lasting all;
-            box-shadow: 0 .3rem .5rem fade-out($color-primary-black, .2);
+            transition: all $time-transition-brisk;
 
-            width: 95%;
-            padding: 0 0 95%;
+            header,
+            span.action {
 
-            &:hover {
-
-                transition: $time-transition-brisk all;
-                box-shadow: 0 .4rem .6rem fade-out($color-primary-black, .1);
+                transition: all $time-transition-brisk;
+                opacity: 1;
             }
+
 
             &:after {
 
-                content: '';
-                position: absolute;
-                top: 15%;
-                right: 15%;
-                bottom: 15%;
-                left: 15%;
-                z-index: 1;
-                transition: $time-transition-lasting all;
-                background: no-repeat center center / auto 50%;
+                background-color: hsla(0, 0, 0, .50);
+                transition: all $time-transition-brisk;
             }
+        }
 
-            &:hover:after {
+        a.action {
 
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                transition: $time-transition-brisk all;
+            @include position-absolute-fill;
+            @include hide-text;
+
+            background-color: transparent;
+            border: none;
+            z-index: 5;
+        }
+
+        text-align: center;
+
+        header {
+
+            padding-top: 6rem;
+            font-size: 1.4em;
+            z-index: 4;
+            position: relative;
+            opacity: 0;
+            transition: all $time-transition-lasting;
+        }
+
+        span.action {
+
+            font-family: $font-secondary;
+            font-size: .8em;
+            z-index: 4;
+            position: relative;
+            opacity: 0;
+            transition: all $time-transition-lasting;
+            color: $color-primary-lighter;
+        }
+
+        &:after {
+
+            content: "";
+            @include position-absolute-fill;
+            z-index: 3;
+            background-color: transparent;
+            transition: all $time-transition-lasting;
+        }
+
+        &:before {
+
+            content: "";
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-position: center center;
+            @include position-absolute-fill;
+            z-index: 1;
+        }
+
+        &.cite {
+
+            flex: 1 100%;
+
+            &:before {
+
+                background-position: center top;
+                background-image: url(/images/banner-cite.jpg);
             }
+        }
 
-            &.facebook {
+        &.redandsilver {
 
-                background-color: #3960ac;
+            &:before {
 
-                &:hover {
-
-                    background-color: #3968c6;
-                }
-
-                &:after {
-
-                    background-image: url('/wp-content/themes/jng16/img/links-badge-facebook.png');
-                }
+                background-image: url(/images/banner-redandsilver.jpg);
             }
+        }
 
-            &.googleplus {
+        &.sheltonmachines {
 
-                background-color: #ac3939;
+            &:before {
 
-                &:hover {
-
-                    background-color: #c63939;
-                }
-
-                &:after {
-
-                    background-image: url('/wp-content/themes/jng16/img/links-badge-googleplus.png');
-                }
+                background-image: url(/images/banner-sheltonmachines.jpg);
             }
+        }
 
-            &.twitter {
+        &.xxxmints {
 
-                background-color: #3999ac;
+            &:before {
 
-                &:hover {
-
-                    background-color: #39aec6;
-                }
-
-                &:after {
-
-                    background-image: url('/wp-content/themes/jng16/img/links-badge-twitter.png');
-                }
+                background-image: url(/images/banner-xxxmints.jpg);
             }
+        }
 
-            &.rdio {
+        &.benchinery {
 
-                background-color: #4c39ac;
+            flex: 1 50%;
 
-                &:hover {
+            &:before {
 
-                    background-color: #5139c6;
-                }
-
-                &:after {
-
-                    background-image: url('/wp-content/themes/jng16/img/links-badge-rdio.png');
-                }
+                background-image: url(/images/banner-benchinery.jpg);
             }
+        }
 
-            &.linkedin {
+        &.argentobrass {
 
-                background-color: #3973ac;
+            flex: 1 50%;
 
-                &:hover {
+            &:before {
 
-                    background-color: #397fc6;
-                }
-
-                &:after {
-
-                    background-image: url('/wp-content/themes/jng16/img/links-badge-linkedin.png');
-                }
+                background-image: url(/images/banner-argentobrass.jpg);
             }
+        }
 
-            &.lastfm {
+        &.countfestchorus {
 
-                background-color: #ac3939;
+            &:before {
 
-                &:hover {
-
-                    background-color: #c63939;
-                }
-
-                &:after {
-
-                    background-image: url('/wp-content/themes/jng16/img/links-badge-lastfm.png');
-                }
-            }
-
-            &.github {
-
-                background-color: #656565;
-
-                &:hover {
-
-                    background-color: #707070;
-                }
-
-                &:after {
-
-                    background-image: url('/wp-content/themes/jng16/img/links-badge-github.png');
-                }
+                background-image: url(/images/banner-countfestchorus.jpg);
             }
         }
     }
 }
 
+section.hero {
 
+    img {
 
-article.index.main {
-
-    article.post {
-
-        position: relative;
-
-        transition: all $time-transition-lasting;
-
-        &:hover {
-
-            transition: all $time-transition-brisk;
-        }
-
-        aside.action.post {
-
-            @include position-absolute-fill;
-
-            a.action {
-
-                @include position-absolute-fill;
-                @include hide-text;
-
-                background-color: transparent;
-            }
-        }
+        border: 1px solid $color-primary-grey;
     }
 }

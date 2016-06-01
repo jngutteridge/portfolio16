@@ -20,6 +20,11 @@ html {
 	box-sizing: inherit;
 }
 
+img {
+
+    max-width: 100%;
+}
+
 
 body {
 
@@ -166,8 +171,13 @@ article.index.page {
 
 header.main {
 
-    padding: 8rem 0 6rem;
+    padding: 2rem 0;
     text-align: center;
+
+    .container {
+
+        @include width-container-xwide;
+    }
 
     h1 {
 
@@ -186,6 +196,7 @@ header.main {
         ul {
 
             padding: 0;
+            margin: 0;
         }
 
         li {
@@ -193,17 +204,44 @@ header.main {
             margin: 0;
         }
     }
-}
 
-section.frontpage.links.main {
+    @media (min-width: $width-media-medium) {
 
-    .container {
+        h1,
+        h2 {
 
-        @include width-container-wide;
+            text-align: left;
+        }
+
+        section.title,
+        nav.main {
+
+            display: block;
+            float: left;
+            width: 50%;
+        }
+
+        nav {
+
+            ul {
+
+                float: right;
+                margin-top: 1em;
+            }
+
+            li {
+
+                display: block;
+                float: left;
+                margin-left: 1em;
+            }
+        }
     }
+
+    @include pie-clearfix;
 }
 
-article.frontpage.main {
+article.main {
 
     margin: 0;
 
@@ -224,6 +262,42 @@ article.frontpage.main {
         &.contact {
 
             text-align: center;
+        }
+    }
+}
+
+article.work {
+
+    section.hero {
+
+        .container {
+
+            @include width-container-wide;
+            padding-top: 4rem;
+        }
+
+        img {
+
+            width: 100%;
+        }
+
+        .featured {
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            margin-right: -1rem;
+            margin-top: .4rem;
+
+            div.square {
+
+                width: 33%;
+                height: 10px;
+                padding-bottom: 33%;
+                display: block;
+                margin-right: 1rem;
+                flex: 1 20%;
+            }
         }
     }
 }
